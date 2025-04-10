@@ -7,6 +7,16 @@ let
 in {
 	system.activationScripts.cava = ''
 		mkdir -p ${home}/.config
+		chown ${username}:${group} ${home}/.config
+		chmod 700 ${home}/.config
+
+		mkdir ${home}/.config/cava
+		chown ${username}:${group} ${home}/.config/cava
+		chmod 700 ${home}/.config/cava
+
+		cp ${./config} ${home}/.config/cava/config
+		chown ${username}:${group} ${home}/.config/cava/config
+		chmod 600 ${home}/.config/cava/config
 	'';
 
 	environment.systemPackages = with pkgs; [
