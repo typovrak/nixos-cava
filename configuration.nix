@@ -10,6 +10,7 @@ in {
 		chown ${username}:${group} ${home}/.config
 		chmod 700 ${home}/.config
 
+		rm -rf ${home}/.config/cava
 		mkdir ${home}/.config/cava
 		chown ${username}:${group} ${home}/.config/cava
 		chmod 700 ${home}/.config/cava
